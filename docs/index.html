@@ -1,1 +1,29 @@
-iiiiihello
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Page Title</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+  <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+</head>
+
+<body>
+  <script>
+    const gitalk = new Gitalk({
+      clientID: 'GitHub Application Client ID',
+      clientSecret: 'GitHub Application Client Secret',
+      repo: 'GitHub repo',
+      owner: 'GitHub repo owner',
+      admin: ['GitHub repo owner and collaborators, only these guys can initialize github issues'],
+      id: location.pathname,      // Ensure uniqueness and length less than 50
+      distractionFreeMode: false  // Facebook-like distraction free mode
+    })
+
+    gitalk.render('gitalk-container')
+  </script>
+</body>
+
+</html>
